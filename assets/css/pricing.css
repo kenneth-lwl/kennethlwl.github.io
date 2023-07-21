@@ -1,0 +1,103 @@
+.price-card--price-number:before {
+  content: "$";
+  font-size: 2rem;
+  display: inline-block;
+  position: relative;
+}
+
+.price-card--price-number:after {
+  content: "/ mo";
+  font-size: 1.3rem;
+  display: inline-block;
+}
+
+.switch-label {
+  text-align: center;
+  opacity: 0.4;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 1rem;
+}
+
+.switch-label .save-money {
+  color: #3498db;
+  font-style: italic;
+  padding-left: 0.5rem;
+}
+
+.save-money--mobile {
+  color: #3498db;
+  font-style: italic;
+  display: none;
+}
+
+.switch-label.active {
+  opacity: 1;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.75rem;
+  height: 2.15rem;
+  vertical-align: -50%;
+  margin: 0;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3498db;
+  border-radius: 34px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+#js-pricing-switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+#js-pricing-switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+@media (max-width: 980px) {
+  /* Pricing Switch */
+
+  .switch-label {
+    display: inline-block;
+    width: auto;
+  }
+
+  .save-money {
+    display: none;
+  }
+
+  .save-money--mobile {
+    display: block;
+    font-weight: bold;
+  }
+}
